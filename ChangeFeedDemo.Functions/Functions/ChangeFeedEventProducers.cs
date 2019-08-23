@@ -47,7 +47,7 @@ namespace ChangeFeedDemo.Functions
         }
 
         [FunctionName("UpdateTaskItem")]
-        public static async Task<IActionResult> UpdateTaskItem(
+        public async Task<IActionResult> UpdateTaskItem(
             [HttpTrigger(AuthorizationLevel.Anonymous, "put", Route = "task/{id}")]HttpRequest req,
             [CosmosDB(ConnectionStringSetting = Constants.CosmosConnectionString)] DocumentClient client,
             ILogger logger,
